@@ -65,7 +65,8 @@
 			} 
 		},
 		makeSelection: function (app, element, appField, alwaysOneSelected, stype){
-			let temp = '[', toogleField=true;
+			let temp = '[', toogleField=true, vals='';
+			let selectVal = '';
 			
 			if($.isArray()){
 				 app.field(appField).clear(); toogleField = false;
@@ -96,9 +97,11 @@
 			
 		},
 		setvariables: function(apps, bnQSvars){
+			//console.log(bnQSvars);
+			
 			if($.isArray(apps)){
-				for (appc= 0; appc < apps.length; appc++){
-					for (vc =0; vc < bnQSvars.length; vc++){
+				for (let appc= 0; appc < apps.length; appc++){
+					for (let vc =0; vc < bnQSvars.length; vc++){
 						if(!isNaN(bnQSvars[vc].value))
 							apps[appc].app.
 						variable.setNumValue(bnQSvars[vc].name, parseInt(bnQSvars[vc].value));
@@ -107,7 +110,7 @@
 					}
 				}
 			} else {
-				for (vc =0; vc < bnQSvars.length; vc++){
+				for (let vc =0; vc < bnQSvars.length; vc++){
 					if(!isNaN(bnQSvars[vc].value))
 						apps.variable.setNumValue(bnQSvars[vc].name, parseInt(bnQSvars[vc].value));
 						apps.variable.setStringValue(bnQSvars[vc].name,bnQSvars[vc].value);
@@ -118,13 +121,13 @@
 		},
 		updatevariables: function(apps, bnQSvars){
 			if($.isArray(apps)){
-				for (appc= 0; appc < apps.length; appc++){
-					for (vc =0; vc < bnQSvars.length; vc++){
+				for (let appc= 0; appc < apps.length; appc++){
+					for (let vc =0; vc < bnQSvars.length; vc++){
 						this.getvariable(apps[appc].app,bnQSvars[vc].name);
 					}
 				}
 			} else {
-				for (vc =0; vc < bnQSvars.length; vc++){
+				for (let vc =0; vc < bnQSvars.length; vc++){
 					this.getvariable(apps[appc].app,bnQSvars[vc].name);
 				}
 			}
@@ -295,7 +298,7 @@
 			app: {},
 			uniqueId: '',
 			appField: '',
-			fieldOrlet: "field",
+			fieldOrVar: "field",
 			variable: '{name: Name, value:Value}',
 			labelForField: "",
 			countTotalLabel: 'of',
@@ -327,7 +330,7 @@
 			obj.str = '';
 			
 			/* if(vars.alwaysOneSelected == true){
-				if(vars.fieldOrlet == 'toField' && bnQSession.alwaysOneSelectedFields[vars.appField] == undefined){
+				if(vars.fieldOrVar == 'toField' && bnQSession.alwaysOneSelectedFields[vars.appField] == undefined){
 					bnQSession.alwaysOneSelectedFields[vars.appField] = true;
 					bnQSession.alwaysOneSelectedFieldsValues[vars.appField] = vars.defaultSelection;
 					vars.fieldType == 'int'? selectVal = parseInt(vars.defaultSelection) : selectVal = obj.options.defaultSelection;	
@@ -343,12 +346,12 @@
 			
 			//console.log(vars.app);
 			if(vars.allowSelection == true){ 
-				if(vars.fieldOrlet == 'field' || vars.fieldOrlet == 'both'){
+				if(vars.fieldOrVar == 'field' || vars.fieldOrVar == 'both'){
 					obj.element.children('select').on( 'change', function () {
 						bnHelper.makeSelection(vars.app, this, vars.appField  , false ,'option') 
 					}); 
 				} 
-				if(vars.fieldOrlet == 'let'){
+				if(vars.fieldOrVar == 'var'){
 					
 				}
 			}
@@ -388,7 +391,7 @@
 						}
 						
 						vars.useEmptyAsLabel == true ? emptyValue = vars.aFieldName: emptyValue = vars.emptyValue;
-						fCounter != '' && this.emptyValue == vars.emptyValue ? emptyValue = '':false;
+						fCounter != '' && emptyValue == vars.emptyValue ? emptyValue = '':false;
 						//if(vars.multiple == false ) sState = 'status'+ state ;
 						if(vars.showSelectedInLabel == true ) { 
 							$('#label-'+vars.uniqueId).html(vars.appField + fCounter); 
@@ -427,7 +430,7 @@
 						else { sname != '' ? fCounter = ' (' + sname +')': fCounter =''; }
 					}
 					vars.useEmptyAsLabel == true ? emptyValue = vars.aFieldName: emptyValue = vars.emptyValue;
-					fCounter != '' && this.emptyValue == vars.emptyValue ? emptyValue = '':false;
+					fCounter != '' && emptyValue == vars.emptyValue ? emptyValue = '':false;
 					//if(vars.multiple == false ) sState = 'status'+ state ;
 					if(vars.showSelectedInLabel == true ) { 
 						$('#label-'+vars.uniqueId).html(vars.appField + fCounter); 
@@ -449,7 +452,7 @@
         options: {
 			app: {},
 			appField: '',
-			fieldOrlet: "field",
+			fieldOrVar: "field",
 			variableName: "letname to store value(s)",
 			labelForField: "",
 			showFrequencies:false,
@@ -612,13 +615,13 @@
 						});
 					}
 					
-					if(vars.fieldOrlet == 'field' || vars.fieldOrlet == 'both'){
+					if(vars.fieldOrVar == 'field' || vars.fieldOrVar == 'both'){
 						$('#' + vars.uniqueId + '-listbox-elements li').on( 'click', function () {
 							console.log(vars.appField);
 							bnHelper.makeSelection(vars.app, this, vars.appField ) 
 						}); 
 					} 
-					if(vars.fieldOrlet == 'let'){
+					if(vars.fieldOrVar == 'var'){
 						//bnHelper.setvariables(vars.app, vars.variables);
 					}
 				});
@@ -633,7 +636,7 @@
         options: {
 			app: {},
 			appField: '',
-			fieldOrlet: "field",
+			fieldOrVar: "field",
 			label: '',
 			type: 'range',
 			variables: "[{name: Name, value:Value},name1: Name1, value1:Value1}]",
@@ -658,7 +661,7 @@
 			
 			let vars = this.options;
 			vars.uniqueId =  bnHelper.uniqueId();
-			
+			//console.log(vars);
 			let readOnly = 'readonly="readonly"';
 			let str = '';
 			// Store Session vars for Clear All
@@ -686,7 +689,7 @@
 			//vars.startValues.max != 20 ? vars.max = vars.startValues.max : false;
 			//console.log( vars.uniqueId);
 			if(vars.type == 'range'){ 
-				//console.log(vars.max);
+				//console.log(vars)
 				$('#' + vars.uniqueId + '-slider' ).slider( {
 					range: true, 
 					min: vars.min, 
@@ -697,9 +700,9 @@
 						
 						$('#' + vars.uniqueId + '-value' ).val( "" + ui.values[ 0 ] + " - " + ui.values[ 1 ] );
 						
-						if(vars.fieldOrlet == 'field' && vars.appField != ''){
+						if(vars.fieldOrVar == 'field' && vars.appField != ''){
 							vars.app.field(vars.appField).selectMatch(">" + ui.values[ 0 ] + "<" + ui.values[ 1 ]);
-						} else if (vars.fieldOrlet == 'let' && $.isArray(vars.variables)) {
+						} else if (vars.fieldOrVar == 'var' && $.isArray(vars.variables)) {
 							vars.variables[0].value = ui.values[ 0 ];
 							vars.variables[1].value = ui.values[ 1 ];
 							bnHelper.setvariables(vars.app, vars.variables);
@@ -750,9 +753,9 @@
 					$( '#' + vars.uniqueId + '-value' ).val( "" + ui.value );
 					//console.log( ui.value);
 					if(ui.value == 0 && vars.resetByZero == true) vars.app.field(vars.appField).clear();
-					if(vars.fieldOrlet == 'field' && vars.appField != ''){
+					if(vars.fieldOrVar == 'field' && vars.appField != ''){
 						vars.app.field(vars.appField).selectMatch(vars.condition + ui.value);
-					} else if (vars.fieldOrlet == 'let' && $.isArray(variables)) {
+					} else if (vars.fieldOrVar == 'var' && $.isArray(variables)) {
 						vars.variables[0].value = ui.values[ 0 ];
 						bnHelper.setvariables(vars.app, vars.variables);
 					}
@@ -1335,6 +1338,7 @@
         _create: function () {
 			
 			let obj = this;
+			let icon ='';
 			this.vars = {};
 			this.vars.oldWith ='';
 			
