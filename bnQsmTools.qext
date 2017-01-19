@@ -1,0 +1,16 @@
+{
+	"type": "mashup",
+	"name": "bnQsmTools",
+	"description": "Basic mashup template with absolute positioning",
+	"author": "Thomas Lindackers",
+	"homepage": "http://qlik.binom.net",
+	"keywords": "qlik-sense, visualization, mashup",
+	"license": "",
+	"preview": "inc/content/img/QlikLogo.png",
+	"repository": "",
+	"dependencies": {
+		"qlik-sense": ">=1.0.x"
+	},
+	"src": "/extensions/bnQsmTools/inc/content/img/QlikLogo.png",
+	"version": "2.0.1"
+}

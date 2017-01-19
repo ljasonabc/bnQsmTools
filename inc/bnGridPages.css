@@ -1,0 +1,61 @@
+/***************************************************************************************
+*		@Author:		Thomas Lindackers (tlr@qlik.com) [t.l@binom-network.org]
+*		@Version:		2.0.0.2
+*
+*		
+*		@Copyright:		CSS Grid Layout by Thomas Lindackers binom.net
+*
+*		
+*
+*
+****************************************************************************************/
+
+/*
+	BN Grid
+*/
+
+.bnGridContainer{
+	background-color:#fff;
+	display:inline-block;
+	 position:relative;
+	 overflow:hidden;
+	 box-sizing: border-box;
+	 width: 100%;
+	 height: 93vh;
+	 float:left;
+	 border:0 !important;
+ }
+ 
+
+.bnBoxContent{
+	padding: 5px;
+}
+.bnBoxContent *{
+    vertical-align: top;
+}
+ 
+.bnPage:hover
+{
+	-webkit-box-shadow: 		2px 2px 2px 0px #c0c0c0;
+	-moz-box-shadow:    		2px 2px 2px 0px #c0c0c0;
+	box-shadow:         		2px 2px 2px 0px #c0c0c0;
+	
+}
+
+.bnPage:hover
+{
+	-webkit-box-shadow: 		2px 2px 2px 0px #c0c0c0;
+	-moz-box-shadow:    		2px 2px 2px 0px #c0c0c0;
+	box-shadow:         		2px 2px 2px 0px #c0c0c0;
+	
+}
+.bnPage:hover h1 {
+	background-color: #68B536;
+    -webkit-transition: background-color .2s ease-in-out;
+    -moz-transition:  background-color .2s ease-in-out;
+    -o-transition:  background-color .2s ease-in-out;
+    -ms-transition:  background-color .2s ease-in-out;
+    transition:  background-color .2s ease-in-out;
+	cursor: pointer;
+}
+

@@ -1,0 +1,275 @@
+/***************************************************************************************
+*		@Author:		Thomas Lindackers (tlr@qlik.com) [t.l@binom-network.org]
+*		@Version:		2.0.0.2
+*
+*		
+*		@Copyright:		CSS Grid Layout by Thomas Lindackers binom.net
+*
+*		
+*
+*
+****************************************************************************************/
+@font-face {
+  font-family: 'Dancing Script';
+  font-style: normal;
+  font-weight: 400;
+  src: 
+  local('Dancing Script'), 
+  local('DancingScript'), 
+  url('inc/fonts/DancingScript.woff2') format('woff2'),
+  url('inc/fonts/DancingScript.ttf') format('truetype');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+  
+  }
+
+.fDancing, #header h1,
+.SingleHeader	
+					{ 	font-family: 	'Dancing Script', cursive;						}
+			
+ 
+ 
+ body{
+	 font-family: Helvetica, Arial, sans-serif;
+	 background: #fff
+	
+ }
+ 
+ *, select{
+	 padding: 0;
+	 margin: 0;
+	 border-radius:0;
+	 font-size: 1.5vh;
+	  font-family: Helvetica, Arial, sans-serif;
+ }
+/*
+
+
+*/
+#wrapper{
+	height:100vh;
+	width: 100vw;
+}
+#header{
+	background-color: #fff;
+    box-sizing: border-box;
+	position:relative;
+	width: 100%;
+	height: 4vh;
+	border-bottom: 1px solid #afafaf;
+	padding-top:0.3vh;
+}
+
+#header h1{
+	display: inline-block;
+	font-size:2.5vh;
+	padding: 0 1vh 0 0.5vh;
+	display:inline-block;
+	float:left;
+	color:#4c4c5a;
+ }
+ 
+#logo					{	
+	background: white url("inc/content/img/QlikLogo.png");
+	background-repeat: none;
+	background-position: bottom;
+	background-size: cover;
+	width: 3.5vh;
+	background-position: bottom;
+	background-size: cover;
+	background-color: #fff;
+	display: inline-block;
+	padding-top:0.5vh;
+	float:left;
+	height: 2.8vh;
+}
+
+#sideBar{
+	display:inline-block;
+	box-sizing: border-box;
+	width:18%;
+	padding:5px;
+	height: 95vh;
+	border-right: 1px solid #afafaf;
+	background-color: #fff;
+	float: left;
+	display:none;
+	left:0;
+}
+
+#sideBar .bnQSSliderValue label{
+	width:100%
+}
+
+#sideBarRight{
+	display:inline-block;
+	box-sizing: border-box;
+	width:18%;
+	height: 95vh;
+	padding:5px;
+	border-left: 1px solid #afafaf;
+	background-color: #fff;
+	float: left;
+	display:none;
+}
+
+#bnQSToolBox h2{
+	border-bottom: 1px solid #efefef;
+	width: 90%;
+	color: #4c4c5a;
+	margin-bottom: 1vh;
+	margin-top: 1vh;
+	font-size: 1.4vh;
+	font-style: italic;
+}
+
+#bnQSToolBox h1{
+	border-bottom: 1px solid #efefef;
+	width:100%;
+	padding: 0.5vh;
+	background-color:  #68B536;
+	color: #fff;
+	margin-top: 2px;
+}
+
+#headerMenu{
+	float:right;
+	padding-right: 0vh;
+	font-size: 1.8vh;
+}
+
+#bnPageMenu{
+	float:left;
+	width:auto;
+}
+.clearFix:after{
+	content: ".";
+    clear: both;
+    display: block;
+    visibility: hidden;
+    height: 0px;
+}
+
+#footer{
+	box-sizing: border-box;
+	position:absolute;
+	width: 100%;
+	height: 3vh;
+	background-color: #fff;
+	border-top: 1px solid #afafaf;
+	bottom: 0;
+	padding: 0.8vh;
+	color: #3e3e3e;
+	 font-family: 'Dancing Script';
+}
+
+#bnLoadingOverlay{
+	width:100%;
+	height:100%;
+	position:absolute;
+	z-index: 9999999;
+	background-color:white;
+	text-align:center;
+	
+}
+#bnLoadingOverlayTitle{
+	margin-top:150px;
+	width:100%;
+	text-align:center;
+}
+
+#bnLoadingOverlayTitle h2, #bnLoadingOverlayTitle h3 {	
+	width: 100%;
+	font-family: 	'Dancing Script', cursive;	
+	font-size: 	3vh;
+	text-align:center;
+	font-weight: normal;
+}
+#bnLoadingOverlayTitle h1 {	
+	width: 100%;
+	text-align:center;
+	font-family: 	'Dancing Script', cursive;	
+	font-size:  4vh;							
+}
+
+
+.bnGridContainer  > div {
+	 box-sizing: border-box;
+	 border: 1px solid #afafaf;
+	 background-color: #fff;
+ }
+ 
+.bnGridContainer   > div > h1{
+	border-bottom: 1px solid #efefef;
+	padding: 0.5vh 0.5vh 0.5vh 0.5vh;
+	color:#fff;
+	background-color: #4c4c5a;
+ }
+ 
+
+ #inLineGrid{
+	position:relative;
+	height: 92%;
+	width: 100%;
+ }
+ 
+#inLineGrid  > div {
+	border: 1px solid #333;
+	background-color: #fff;
+	box-sizing: border-box;
+ }
+ 
+#inLineGrid   > div > h2{
+	background-color: #efefef;
+	border-bottom: 1px solid #fafafa;
+	font: italic bold 1.5vh Verdana, serif;
+	padding: 2px 5px 2px 5px;
+	color:	#999;
+	font-weight:normal;
+ }
+ 
+.qvobject h1{
+	display:none !important;
+
+}
+a:link,
+a:active ,
+a:hover ,
+a:visited {	
+	text-decoration: none;	
+	color:black					
+}
+
+
+.qvplaceholder, .qvobject{
+	position:relative;
+	display:block;
+	width:100%;
+	 height: -moz-calc(100% - (3vh));
+    height: -webkit-calc(100% - (3vh));
+    height: calc(100% - (3vh));
+	box-sizing: border-box;
+}
+
+.qv-object-subtitle {
+	padding-left: 2vh;
+}
+
+
+.cssload-loader-inner  {	
+	position:relative;
+	height: 120px;
+	margin:auto;
+	width: 200px;
+}
+
+.hide			{	display: 		none;			}
+.noPadding 		{	padding:		0 !important;	}
+.noBorder		{	border:			0 !important;	}
+.noBorderRadius	{	border-radius:	0 !important;	}	
+.noMargin 		{	margin:			0 !important;	}
+.noMarginT  		{	margin-top:		0 !important;	}
+.noMarginB  		{	margin-bottom:	0 !important;	}
+.noMarginR  		{	margin-right:	0 !important;	}
+.noMarginL 		{	margin-left:	0 !important;	}
+
+ 
