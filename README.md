@@ -1,4 +1,4 @@
-# bnQsmTools (a complete Mashups) 
+# bnQsmTools (a complete Mashup) 
 
 A Qlik Sense Mashup Helper Toolkit (jQuery Widgets 4 Qlik Sense)
 the inc/ Scripts are the Core Framework but published as complete Mashup to get a better start with.
