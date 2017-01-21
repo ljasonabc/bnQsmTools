@@ -1,0 +1,1 @@
+Please copy these apps to Documents/qlik/sense/apps/

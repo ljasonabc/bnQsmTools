@@ -71,7 +71,7 @@ require( [	"js/qlik",
 	var qlikResize = qlik.resize;
 	
 	var grid = $('#gridcontainer').bnGrid( { 
-		matrix: { cols: 3, rows: 5 },
+		matrix: { cols: 4, rows: 6 },
 		pad:{ cols:7, rows:7},
 		complete: function(){ // InlineGrid 
 			$('#inLineGrid').bnGrid( { matrix:{cols: 2, rows: 2 }, complete: function(){} });
