@@ -68,6 +68,7 @@ require( [	"js/qlik",
 		not finsihed
 	*/
 	//pass Click Resize to ResizeGrid
+	
 	var qlikResize = qlik.resize;
 	
 	var grid = $('#gridcontainer').bnGrid( { 
